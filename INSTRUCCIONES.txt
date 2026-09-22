@@ -1,0 +1,55 @@
+TEZVO CON PANEL DE ADMINISTRACIÓN
+=====================================
+
+La página pública no pide inicio de sesión.
+Solo los administradores entran en: /tezvo/admin.html
+
+PASO 1: CREAR EL PROYECTO EN SUPABASE
+--------------------------------------
+1. Entra en https://supabase.com y crea una cuenta.
+2. Crea un proyecto nuevo.
+3. Guarda bien la contraseña del proyecto; no la compartas.
+
+PASO 2: CREAR LAS TABLAS Y PERMISOS
+------------------------------------
+1. Dentro del proyecto, entra en SQL Editor.
+2. Abre el archivo supabase-setup.sql de esta carpeta.
+3. Copia todo su contenido, pégalo en SQL Editor y pulsa Run.
+
+PASO 3: CREAR EL PRIMER ADMINISTRADOR
+--------------------------------------
+1. En Supabase entra en Authentication > Users.
+2. Pulsa Add user / Create new user.
+3. Escribe el correo y una contraseña segura del administrador.
+4. Copia el UUID del usuario creado.
+5. Regresa a SQL Editor y ejecuta, reemplazando el texto por el UUID real:
+
+insert into public.admins (user_id) values ('UUID_DEL_USUARIO');
+
+Para agregar más administradores, crea cada usuario y repite esa línea con su UUID.
+Cada persona debe tener su propia cuenta. No compartan una sola contraseña.
+
+PASO 4: CONECTAR LA PÁGINA
+---------------------------
+1. En Supabase busca Project Settings > API.
+2. Copia Project URL.
+3. Copia la clave pública llamada Publishable key o anon public.
+4. Abre config.js y reemplaza únicamente los dos textos de ejemplo.
+
+IMPORTANTE: nunca pongas en config.js una secret key ni service_role.
+Solo se usa la clave pública Publishable/anon.
+
+PASO 5: ACTUALIZAR GITHUB
+--------------------------
+1. En el repositorio tezvo elimina el index.html anterior.
+2. Sube TODOS los archivos y la carpeta assets de este paquete.
+3. Confirma los cambios.
+4. Espera unos minutos a que GitHub Pages se actualice.
+
+ENLACES
+-------
+Catálogo público: https://nariash7.github.io/tezvo/
+Administración:   https://nariash7.github.io/tezvo/admin.html
+
+Desde el panel podrás cambiar nombre, WhatsApp, textos, productos, precios,
+categorías, visibilidad e imágenes sin volver a editar GitHub.
