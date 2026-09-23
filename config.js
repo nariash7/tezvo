@@ -1,4 +1,4 @@
 window.TEZVO_CONFIG = {
-  SUPABASE_URL: "PEGA_AQUI_TU_URL_DE_SUPABASE",
-  SUPABASE_ANON_KEY: "PEGA_AQUI_TU_CLAVE_PUBLICA_ANON"
+  SUPABASE_URL: "https://pdeariqpasirydkwfkng.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_7_7aJzZ52GYljQwGogbm7A_PhpTApnc"
 };
